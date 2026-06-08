@@ -1,0 +1,314 @@
+:root {
+  --bg: #f6f5ef;
+  --surface: #ffffff;
+  --surface-soft: #f0f4ef;
+  --text: #202923;
+  --muted: #5f6c63;
+  --line: #dde4dc;
+  --accent: #2f6f58;
+  --accent-dark: #245443;
+  --gold: #a97828;
+  --shadow: 0 10px 30px rgba(32, 41, 35, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.75;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.site-header {
+  padding: 34px 20px 20px;
+}
+
+.header-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.28rem;
+}
+
+.header-note {
+  margin: 0;
+  color: var(--muted);
+  max-width: 320px;
+  text-align: right;
+}
+
+.page-shell {
+  width: min(1040px, calc(100% - 28px));
+  margin: 0 auto 48px;
+}
+
+.control-panel,
+.chapter-nav,
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.control-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+label {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--text);
+  background: var(--surface);
+  font-size: 1.05rem;
+}
+
+.chapter-summary {
+  min-height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: var(--accent-dark);
+  background: var(--surface-soft);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.chapter-nav {
+  margin: 14px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 20px;
+  color: #fff;
+  background: var(--accent);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.panel {
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.panel-heading {
+  margin-bottom: 14px;
+}
+
+.scripture-panel {
+  padding: clamp(20px, 4vw, 38px);
+}
+
+.scripture-content {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  line-height: 2.05;
+}
+
+.verse {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.verse + .verse {
+  margin-top: 0;
+}
+
+.verse-number {
+  display: inline;
+  margin-right: 0.35em;
+  color: var(--accent-dark);
+  font-size: 0.72em;
+  font-weight: 800;
+  vertical-align: super;
+}
+
+.study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.muted-text,
+.reflection-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.reflection-text {
+  color: var(--text);
+}
+
+.prayer-panel {
+  background: #fffaf0;
+}
+
+.commentary-panel {
+  margin-top: 14px;
+}
+
+.chat-list {
+  display: grid;
+  gap: 8px;
+}
+
+.chat-message {
+  max-width: 900px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.chat-message.question {
+  color: var(--accent-dark);
+  background: #f7faf7;
+  border-left: 4px solid var(--accent);
+}
+
+.chat-message.answer {
+  background: var(--surface-soft);
+}
+
+.chat-role {
+  display: inline;
+  margin-right: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .header-inner {
+    display: block;
+  }
+
+  .header-note {
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  .control-panel,
+  .study-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-summary {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding: 24px 14px 16px;
+  }
+
+  .page-shell {
+    width: min(100% - 18px, 1040px);
+    margin-bottom: 28px;
+  }
+
+  .control-panel,
+  .panel {
+    padding: 14px;
+  }
+
+  .scripture-panel {
+    padding: 18px 16px;
+  }
+
+  .scripture-content {
+    font-size: 1.28rem;
+    line-height: 2;
+  }
+
+  .chapter-nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .chapter-nav button {
+    flex: 1;
+    padding-inline: 10px;
+  }
+
+  .chat-message {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}

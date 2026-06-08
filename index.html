@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圣经读经与解经系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <p class="eyebrow">Bible Reading & Study</p>
+        <h1>圣经读经与解经系统</h1>
+      </div>
+      <p class="header-note">为教会查经、小组分享与个人灵修设计</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="control-panel" aria-label="读经选择">
+      <div class="field">
+        <label for="testamentSelect">约别</label>
+        <select id="testamentSelect">
+          <option value="old">旧约</option>
+          <option value="new">新约</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="bookSelect">书卷</label>
+        <select id="bookSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="chapterSelect">章节</label>
+        <select id="chapterSelect"></select>
+      </div>
+
+      <div class="chapter-summary" id="chapterSummary">共 0 章</div>
+    </section>
+
+    <section class="chapter-nav" aria-label="章节导航">
+      <button id="prevChapter" type="button">上一章</button>
+      <button id="nextChapter" type="button">下一章</button>
+    </section>
+
+    <section class="panel scripture-panel">
+      <div class="panel-heading">
+        <p class="section-label">经文内容</p>
+        <h2 id="scriptureTitle">请选择章节</h2>
+      </div>
+      <div id="scriptureContent" class="scripture-content"></div>
+    </section>
+
+    <section class="study-grid" aria-label="章节灵修资料">
+      <article class="panel">
+        <p class="section-label">章节背景</p>
+        <h2 id="backgroundTitle">背景资料</h2>
+        <p id="backgroundContent" class="muted-text"></p>
+      </article>
+
+      <article class="panel">
+        <p class="section-label">今日提醒</p>
+        <p id="dailyReminder" class="reflection-text"></p>
+      </article>
+
+      <article class="panel prayer-panel">
+        <p class="section-label">今日祷告</p>
+        <p id="dailyPrayer" class="reflection-text"></p>
+      </article>
+    </section>
+
+    <section class="panel commentary-panel">
+      <div class="panel-heading">
+        <p class="section-label">聊天式解经</p>
+        <h2>从第一节到最后一节</h2>
+      </div>
+      <div id="commentaryChat" class="chat-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
